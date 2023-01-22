@@ -1,9 +1,9 @@
-import Word from "./components/RandomWord"
+import {Home} from "./components/index"
 
 function App() {
   return (
     <div>
-      <Word/>
+      <Home/>
     </div>
   );
 }
