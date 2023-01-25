@@ -9,7 +9,6 @@ const Word = () => {
     const getWord = async () => {
         const response = await axios.get("https://random-word-api.herokuapp.com/word?length=5");
         const data = response.data;
-        console.log("word", data)
         setWord(data);
     }
 
