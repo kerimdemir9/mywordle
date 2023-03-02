@@ -5,10 +5,10 @@ export const Row = ({state, setState, number}) => {
     
     
     const currentWord = state["guess" + number];
-
+    
     return (
         <div>
-            <h1 className='box' >{currentWord[0]}</h1>
+            {currentWord[0] === state.word[0] ? <h1 className='box' style={{backgorundColor: "green"}} >{currentWord[0]}</h1> : <h1 className='box' style={{ backgorundColor: "black"}} >{currentWord[0]}</h1> }
             <h1 className='box' >{currentWord[1]}</h1>
             <h1 className='box' >{currentWord[2]}</h1>
             <h1 className='box' >{currentWord[3]}</h1>

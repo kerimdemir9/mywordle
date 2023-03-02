@@ -11,7 +11,7 @@ export const HiddenInput = ({state, setState}) => {
     const handleSubmit= (e) => {
         e.preventDefault();  
         if(state["guess" + state.count].length !== 5)
-            setError("Complete your guess")
+            setError("Not enough letters!")
         else
         {
             setError("");    

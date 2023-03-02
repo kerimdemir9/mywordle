@@ -4,6 +4,8 @@ import {HiddenInput} from "./HiddenInput.js"
 
 export const Home = ({state, setState}) => {   
 
+
+
     return (
         <>
         <div style={{textAlign: "center", margin: "auto", padding: "auto", marginBottom: "50px", marginTop: "20px", fontSize: "30px", fontFamily: "fantasy"}}>
