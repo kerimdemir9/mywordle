@@ -5,7 +5,7 @@ export const HiddenInput = ({state, setState}) => {
     const [error, setError] = useState("");
 
     const handleChange = (e) => {
-        setState({...state, ["guess" + state.count]: e.target.value})
+        setState({...state, ["guess" + state.count]: e.target.value.toUpperCase()})
     }
 
     const handleSubmit= (e) => {
