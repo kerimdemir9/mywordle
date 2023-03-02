@@ -29,7 +29,11 @@ function App() {
   
   return (
     <div>
-      <Home state={state} setState={setState} />
+      {state.count <=6 ?
+        <Home state={state} setState={setState} />
+        :
+        <h1>Game is over!</h1>
+      }
     </div>
   );
 }

@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+.box {
+  border: 1px solid rgb(0, 0, 0);
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  padding: auto;
+  /* text-align: center;  */
+  display: inline-block;
+  font-size: medium;
+}
+
 .letter-block {
   width: 30px;
   height: 30px;
