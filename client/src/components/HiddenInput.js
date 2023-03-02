@@ -15,7 +15,7 @@ export const HiddenInput = ({state, setState}) => {
         else
         {
             setError("");    
-            setState({...state, count: state.count+1});
+            setState({...state, count: state.count+1, ["submit" + state.count]: true});
         }
 
     }
