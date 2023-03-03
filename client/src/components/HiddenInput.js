@@ -23,7 +23,7 @@ export const HiddenInput = ({state, setState}) => {
 
     return (
         <form  onSubmit={handleSubmit}>
-            <input autoFocus maxLength={5} value={state["guess" + state.count]} onChange={handleChange}/>
+            <input autoFocus maxLength={5} value={state["guess" + state.count]} onChange={handleChange} style={{background: "pink"}}/>
             <h1 style={{color: "red"}}>{error}</h1>
         </form>
         )

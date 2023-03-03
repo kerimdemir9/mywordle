@@ -41,7 +41,6 @@ function App() {
      setState({...state, "word": secretWord});
   }, [secretWord])
 
-    console.log(secretWord)
 
     const won = (state) => {
       for(let i = 1; i < 7; i++)
@@ -75,13 +74,21 @@ function App() {
       getWord();
     }
 
+
+    const Finish = () => {
+
+      return (
+        <div style={{textAlign: "center", marginTop: "15rem"}}>
+        <h1>YOU WON!</h1>
+        <button type="button" onClick={(e) => handleReset(e)} style={{background: "pink"}}> Click to play again </button>
+        </div>
+      )
+    }
+
   return (
     <div>
       { won(state) ? 
-      <div>
-        <h1>YOU WON!</h1>
-        <button type="button" onClick={(e) => handleReset(e)}> Click to play again </button> 
-      </div>
+        <Finish/>
       :
         state.count <=6 ?
         <Home state={state} setState={setState} />
