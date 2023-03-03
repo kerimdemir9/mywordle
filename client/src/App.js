@@ -23,6 +23,7 @@ function App() {
     guess6: "",
     submit6: false,
     count: 1,
+    end: false,
     word: ""
   })
     
@@ -45,17 +46,43 @@ function App() {
     const won = (state) => {
       for(let i = 1; i < 7; i++)
       {
-        console.log("guess" + i,": ", state["guess" + i] )
         if(state["guess" + i] === state.word && state["submit" + i] === true)
           return true;
       }
       return false;
     }
+    
 
+    const handleReset = (e) => {
+      e.preventDefault();
+      setState({
+        guess1: "",
+        submit1: false,
+        guess2: "",
+        submit2: false,
+        guess3: "",
+        submit3: false,
+        guess4: "",
+        submit4: false,
+        guess5: "",
+        submit5: false,
+        guess6: "",
+        submit6: false,
+        count: 1,
+        end: false,
+        word: ""
+      })
+      getWord();
+    }
 
   return (
     <div>
-      {won(state) ? <h1>YOU WON!</h1> :
+      { won(state) ? 
+      <div>
+        <h1>YOU WON!</h1>
+        <button type="button" onClick={(e) => handleReset(e)}> Click to play again </button> 
+      </div>
+      :
         state.count <=6 ?
         <Home state={state} setState={setState} />
         :

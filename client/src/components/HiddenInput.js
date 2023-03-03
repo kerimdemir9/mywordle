@@ -8,13 +8,14 @@ export const HiddenInput = ({state, setState}) => {
         setState({...state, ["guess" + state.count]: e.target.value.toUpperCase()})
     }
 
+
     const handleSubmit= (e) => {
         e.preventDefault();  
         if(state["guess" + state.count].length !== 5)
             setError("Not enough letters!")
         else
         {
-            setError("");    
+            setError("");
             setState({...state, count: state.count+1, ["submit" + state.count]: true});
         }
 
