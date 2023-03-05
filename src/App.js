@@ -1,12 +1,16 @@
 import { Home } from "./components/Home.js"
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Alert from "@mui/material/Alert"
+
 
 function App() {
 
   // const secret = randomWords({min: 5, max:5});
   // console.log("secret: ", secret) 
 
+
+  const [alert, setAlert] = useState(true)
 
   const [secretWord, setSecretWord] = useState("");
   const [state, setState] = useState({
@@ -91,7 +95,16 @@ function App() {
         <Finish />
         :
         state.count <= 6 ?
-          <Home state={state} setState={setState} />
+        <>
+        {alert ? 
+        <>
+        <Alert severity="info"  onClose={() => {setAlert(false)}}>You are trying to guess a word with 5 letters and have 6 chances to find the correct word. Green backgorund means letter is in correct place, yellow means the word contains the letter but in a different place and gray means its not in the word. Good Luck :)</Alert>
+        <Home state={state} setState={setState} />
+        </>
+        :
+        <Home state={state} setState={setState} />
+        }
+        </>
           :
           <div style={{ textAlign: "center", marginTop: "15rem" }}>
           <h1>Game is over!</h1>
