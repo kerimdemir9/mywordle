@@ -11,11 +11,24 @@ export const HiddenInput = ({state, setState}) => {
     }
 
 
+    // const isValid = async (word) => {
+    //     const response = await axios.get("https://api.dictionaryapi.dev/api/v2/entries/en/" + word.toLowerCase())
+    //     const data = response.data[0];
+    //     console.log(data)
+    //     console.log(data.hasOwnProperty('word'))
+    //     if(data.hasOwnProperty('word'))
+    //         return true;
+    //     else
+    //         return false;
+    // }
+
 
     const handleSubmit= (e) => {
         e.preventDefault();  
         if(state["guess" + state.count].length !== 5)
             setError("Not enough letters!")
+        // else if(!isValid(state["guess" + state.count]))
+        //     setError("This word doesn't exist!")
         else
         {
             setError("");
